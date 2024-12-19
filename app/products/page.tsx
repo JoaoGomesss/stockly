@@ -1,8 +1,7 @@
-import { Button } from "../_components/ui/button";
-import { Plus } from "lucide-react";
 import { DataTable } from "../_components/ui/DataTable";
 import { productTableColumns } from "./_components/table-columns";
 import { getProducts } from "../_data-access/products/get-products";
+import AddProductButton from "./_components/add-products-button";
 
 const ProductsPage = async () => {
   const products = await getProducts();
@@ -17,16 +16,16 @@ const ProductsPage = async () => {
           <p className="text-xl font-semibold">Gestão de Produtos</p>
         </div>
         <div className="flex items-end">
-          <Button size="sm" className="py-2">
-            <Plus size={20} />
-            Novo produto
-          </Button>
+          <AddProductButton />
         </div>
       </div>
 
       {/* LISTAGEM DE PRODUTOS */}
       <div>
-        <DataTable columns={productTableColumns} data={products} />
+        <DataTable
+          columns={productTableColumns}
+          data={JSON.parse(JSON.stringify(products))}
+        />
       </div>
     </div>
   );
