@@ -1,12 +1,11 @@
-import { db } from "../_lib/prisma";
-
 import { Button } from "../_components/ui/button";
 import { Plus } from "lucide-react";
 import { DataTable } from "../_components/ui/DataTable";
 import { productTableColumns } from "./_components/table-columns";
+import { getProducts } from "../_data-access/products/get-products";
 
 const ProductsPage = async () => {
-  const products = await db.product.findMany();
+  const products = await getProducts();
   return (
     <div className="mx-8 my-8 ml-8 mt-8 w-full space-y-8 rounded-lg bg-white p-8">
       {/* CABEÇALHO */}
