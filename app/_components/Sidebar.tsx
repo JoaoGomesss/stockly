@@ -6,7 +6,7 @@ const Sidebar = () => {
     <div className="h-screen w-64 bg-white">
       {/* LOGO */}
       <div className="px-8 py-6">
-        <h1 className="text-2xl font-bold text-[#00A180]">STOCKLY</h1>
+        <h1 className="text-2xl font-bold">STOCKLY</h1>
       </div>
 
       {/* BOTÕES */}
