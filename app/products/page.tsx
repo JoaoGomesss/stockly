@@ -1,12 +1,12 @@
 import { DataTable } from "../_components/ui/DataTable";
 import { productTableColumns } from "./_components/table-columns";
 import { getProducts } from "../_data-access/products/get-products";
-import AddProductButton from "./_components/add-products-button";
+import AddProductButton from "./_components/create-products-button";
 
 const ProductsPage = async () => {
   const products = await getProducts();
   return (
-    <div className="mx-8 my-8 ml-8 mt-8 w-full space-y-8 rounded-lg bg-white p-8">
+    <div className="m-8 w-full space-y-8 overflow-auto rounded-lg bg-white p-8">
       {/* CABEÇALHO */}
       <div className="flex w-full items-center justify-between">
         <div className="space-y-1">
